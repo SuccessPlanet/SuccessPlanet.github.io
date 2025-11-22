@@ -229,6 +229,59 @@
         .bannerText p {
           font-size: 1em !important;
         }
+
+        .key-features-stats {
+          gap: 15px !important;
+          flex-wrap: wrap !important;
+          justify-content: flex-start !important;
+          width: 100% !important;
+          overflow: visible !important;
+        }
+
+        .feature-stat-card {
+          padding: 15px 20px !important;
+          min-width: 100px !important;
+          flex: 0 0 auto !important;
+          max-width: none !important;
+        }
+
+        .feature-stat-card div {
+          font-size: 0.95em !important;
+          letter-spacing: 1px !important;
+        }
+
+        .bannerText {
+          overflow: visible !important;
+          width: 100% !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .key-features-stats {
+          gap: 10px !important;
+          justify-content: space-between !important;
+          width: 100% !important;
+          overflow: visible !important;
+        }
+
+        .feature-stat-card {
+          padding: 12px 15px !important;
+          min-width: 90px !important;
+          flex: 1 1 calc(33.333% - 7px) !important;
+          max-width: calc(33.333% - 7px) !important;
+          box-sizing: border-box !important;
+        }
+
+        .feature-stat-card div {
+          font-size: 0.8em !important;
+          letter-spacing: 0.5px !important;
+        }
+
+        .bannerText {
+          overflow: visible !important;
+          width: 100% !important;
+          padding-left: 15px !important;
+        }
       }
 
       /* Image Fade In */
@@ -519,6 +572,221 @@
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
       }
 
+      /* Login Required Modal */
+      .login-required-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 99999;
+        animation: fadeIn 0.3s ease;
+      }
+      .login-required-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 20px;
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        z-index: 100000;
+        animation: slideDown 0.4s ease;
+        overflow: hidden;
+      }
+      .login-required-modal-header {
+        background: linear-gradient(135deg, #f5d76e 0%, #f4c430 100%);
+        padding: 40px 30px;
+        text-align: center;
+        color: #273342;
+        position: relative;
+      }
+      .login-required-icon {
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.5s ease 0.2s both;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      .login-required-icon i {
+        font-size: 50px;
+        color: #f5d76e;
+        animation: shake 0.6s ease 0.4s both;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0) rotate(0deg);
+        }
+        25% {
+          transform: translateX(-10px) rotate(-5deg);
+        }
+        75% {
+          transform: translateX(10px) rotate(5deg);
+        }
+      }
+      .login-required-modal-header h2 {
+        margin: 0;
+        font-size: 2em;
+        font-weight: bold;
+        color: #273342;
+      }
+      .login-required-modal-body {
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .login-required-modal-body p {
+        color: #666;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .login-required-modal-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .login-required-modal-btn {
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+      }
+      .login-required-modal-btn-login {
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        color: white;
+        box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+      }
+      .login-required-modal-btn-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+      }
+      .login-required-modal-btn-register {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      }
+      .login-required-modal-btn-register:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+      .login-required-modal-btn-cancel {
+        background: #f8f9fa;
+        color: #666;
+        border: 2px solid #e0e0e0;
+      }
+      .login-required-modal-btn-cancel:hover {
+        background: #e0e0e0;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Already Enrolled Modal */
+      .already-enrolled-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 99999;
+        animation: fadeIn 0.3s ease;
+      }
+      .already-enrolled-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 20px;
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        z-index: 100000;
+        animation: slideDown 0.4s ease;
+        overflow: hidden;
+      }
+      .already-enrolled-modal-header {
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        padding: 40px 30px;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+      .already-enrolled-icon {
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.5s ease 0.2s both;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      .already-enrolled-icon i {
+        font-size: 50px;
+        color: #ff9800;
+      }
+      .already-enrolled-modal-header h2 {
+        margin: 0;
+        font-size: 2em;
+        font-weight: bold;
+        color: white;
+      }
+      .already-enrolled-modal-body {
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .already-enrolled-modal-body p {
+        color: #666;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .already-enrolled-modal-body .course-name {
+        color: #ff9800;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .already-enrolled-modal-btn {
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .already-enrolled-modal-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 152, 0, 0.5);
+      }
+
       /* Contact Success Modal */
       .contact-success-modal-overlay {
         display: none;
@@ -614,11 +882,23 @@
       }
 
       /* Testimonial Section Styling */
+      #testimonial {
+        padding-top: 40px !important;
+      }
+
+      #testimonial .heading {
+        padding-bottom: 30px !important;
+        margin-bottom: 20px !important;
+      }
+
       #testimonial .testimonial-heading {
         position: relative;
         padding-left: 20px;
         animation: slideInLeft 1s ease-out;
         white-space: nowrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        margin-bottom: 15px;
       }
 
       #testimonial .testimonial-heading::before {
@@ -635,6 +915,76 @@
       #testimonial .testimonial-subtitle {
         animation: fadeInUp 1.2s ease-out 0.3s both;
         color: #666;
+      }
+
+      #testimonial .imageBox span {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      /* Mobile Responsive for Testimonial */
+      @media (max-width: 768px) {
+        #testimonial .testimonial-heading {
+          white-space: normal;
+          font-size: 1.8em !important;
+          line-height: 1.3;
+          padding-left: 15px;
+        }
+
+        #testimonial .testimonial-heading::before {
+          width: 3px;
+        }
+
+        #testimonial .testimonial-subtitle {
+          font-size: 0.95em;
+          padding: 0 10px;
+        }
+
+        .imageSlide {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+          padding: 20px 10px !important;
+        }
+
+        .imageBox {
+          margin: 0 !important;
+          width: auto !important;
+        }
+
+        .imageBox img {
+          width: 80px !important;
+          height: 80px !important;
+        }
+
+        .imageBox span {
+          font-size: 0.8em !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .imageSlide {
+          gap: 10px;
+          padding: 15px 5px !important;
+        }
+
+        .imageBox img {
+          width: 70px !important;
+          height: 70px !important;
+        }
+
+        .imageBox span {
+          font-size: 0.75em !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #testimonial .testimonial-heading {
+          font-size: 1.5em !important;
+          padding-left: 12px;
+        }
       }
 
       @keyframes slideInLeft {
@@ -685,6 +1035,25 @@
         border-radius: 50% !important;
         border: 3px solid transparent !important;
         transition: all 0.3s ease !important;
+      }
+
+      #testimonial .imageBox {
+        background: transparent !important;
+        overflow: visible !important;
+      }
+
+      #testimonial .imageBox img {
+        border-radius: 50%;
+        display: block;
+      }
+
+      #testimonial .imageBox span {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #273342 !important;
+        font-weight: 600 !important;
+        margin-top: 8px !important;
       }
 
       /* Popular Courses Section Enhanced Styling */
@@ -871,14 +1240,27 @@
 
           <div
             class="container"
-            style="position: relative; z-index: 2; padding: 100px 0"
+            style="
+              position: relative;
+              z-index: 2;
+              padding: 100px 0;
+              overflow: visible;
+            "
           >
-            <div class="row" style="align-items: center">
+            <div class="row" style="align-items: center; overflow: visible">
               <!-- Left Side - Text Content -->
-              <div class="col-md-6 col-sm-12" style="padding: 40px">
+              <div
+                class="col-md-6 col-sm-12"
+                style="padding: 40px; overflow: visible"
+              >
                 <div
                   class="bannerText"
-                  style="border-left: 5px solid #f5d76e; padding-left: 30px"
+                  style="
+                    border-left: 5px solid #f5d76e;
+                    padding-left: 30px;
+                    overflow: visible;
+                    width: 100%;
+                  "
                 >
                   <h3
                     id="animated-heading"
@@ -908,16 +1290,18 @@
 
                   <!-- Key Features Stats -->
                   <div
+                    class="key-features-stats"
                     style="
                       margin-bottom: 40px;
                       display: flex;
                       justify-content: flex-start;
                       align-items: center;
                       gap: 30px;
-                      flex-wrap: nowrap;
+                      flex-wrap: wrap;
                     "
                   >
                     <div
+                      class="feature-stat-card"
                       style="
                         background: rgba(255, 255, 255, 0.15);
                         backdrop-filter: blur(10px);
@@ -926,6 +1310,8 @@
                         text-align: center;
                         border: 1px solid rgba(255, 255, 255, 0.2);
                         white-space: nowrap;
+                        flex: 0 0 auto;
+                        min-width: 120px;
                       "
                     >
                       <div
@@ -941,6 +1327,7 @@
                       </div>
                     </div>
                     <div
+                      class="feature-stat-card"
                       style="
                         background: rgba(255, 255, 255, 0.15);
                         backdrop-filter: blur(10px);
@@ -949,6 +1336,8 @@
                         text-align: center;
                         border: 1px solid rgba(255, 255, 255, 0.2);
                         white-space: nowrap;
+                        flex: 0 0 auto;
+                        min-width: 120px;
                       "
                     >
                       <div
@@ -964,6 +1353,7 @@
                       </div>
                     </div>
                     <div
+                      class="feature-stat-card"
                       style="
                         background: rgba(255, 255, 255, 0.15);
                         backdrop-filter: blur(10px);
@@ -972,6 +1362,8 @@
                         text-align: center;
                         border: 1px solid rgba(255, 255, 255, 0.2);
                         white-space: nowrap;
+                        flex: 0 0 auto;
+                        min-width: 120px;
                       "
                     >
                       <div
@@ -1548,7 +1940,7 @@
                 ></i>
                 <h3 style="color: #333; margin-bottom: 15px">HTML</h3>
                 <p style="color: #666; line-height: 1.6; margin-bottom: 20px">
-                  Complete HTML5 course with 120+ resources
+                  Complete HTML5 course with video lectures
                 </p>
                 <a
                   href="javascript:void(0);"
@@ -1570,7 +1962,7 @@
                   >Enroll Now</a
                 ><br />
                 <a
-                  href="course1.html"
+                  href="html-course.html"
                   class="access-course-btn html-access-btn"
                   style="
                     background: #667eea;
@@ -1631,7 +2023,7 @@
                   >Enroll Now</a
                 ><br />
                 <a
-                  href="course2.html"
+                  href="css-course.html"
                   class="access-course-btn css-access-btn"
                   style="
                     background: #667eea;
@@ -1692,7 +2084,7 @@
                   >Enroll Now</a
                 ><br />
                 <a
-                  href="course3.html"
+                  href="science-course.html"
                   class="access-course-btn science-access-btn"
                   style="
                     background: #667eea;
@@ -1722,12 +2114,14 @@
       <section class="grey_section section_gap" id="teachers">
         <div class="container">
           <div class="heading" style="text-align: center">
-            <h1>Our Top Students</h1>
+            <h1>Testimonial</h1>
             <p style="text-align: center">
-              Meet our star performers who achieved excellent results in their
-              10th board exams.<br />
-              These students utilized our platform effectively and secured top
-              ranks in their schools.
+              I am Biswajeet Chakra of class 8A, O.P. Jindal School, Angul with
+              my partner<br />
+              Arnav Kumar. We have scored 95% and 84% respectively in our recent
+              exams.<br />
+              Here are our profiles and experiences with this e-learning
+              platform.
             </p>
           </div>
           <div
@@ -1770,8 +2164,8 @@
                   "
                 >
                   <img
-                    src="images/teachers/teacher1.jpg"
-                    alt="teacher1"
+                    src="images/testimonial/Biswajeet Chakra.jpg"
+                    alt="student1"
                     style="
                       position: absolute;
                       top: 0;
@@ -1803,7 +2197,7 @@
                       text-align: center;
                     "
                   >
-                    Biswajeet Chakra (10A)
+                    Biswajeet Chakra (8A)
                   </h3>
                   <p
                     style="
@@ -1814,9 +2208,10 @@
                       margin: 0 0 20px 0;
                     "
                   >
-                    Scored 95% in board exams. HTML and CSS courses helped me
-                    understand complex concepts easily and build real-world
-                    projects.
+                    I am a frontend developer and founder of this e-learning
+                    platform. I am in Class 8 and have scored 95% marks in my
+                    recent exams. The resources provided here were instrumental
+                    in my success.
                   </p>
                   <div
                     style="
@@ -1907,7 +2302,7 @@
                   "
                 >
                   <img
-                    src="images/teachers/teacher2.jpg"
+                    src="images/testimonial/Arnav Kumar.jpg"
                     alt="teacher2"
                     style="
                       position: absolute;
@@ -1940,7 +2335,7 @@
                       text-align: center;
                     "
                   >
-                    Arnav Kumar (10A)
+                    Arnav Kumar (8A)
                   </h3>
                   <p
                     style="
@@ -1951,9 +2346,10 @@
                       margin: 0 0 20px 0;
                     "
                   >
-                    Achieved 92% marks. The study materials and practice tests
-                    were extremely helpful for my exam preparation and
-                    understanding.
+                    I am a full stack developer and co-founder of this
+                    e-learning platform. I am in Class 8 and have scored 84%
+                    marks in my recent exams. The study materials and practice
+                    tests available here greatly prepared under my notice.
                   </p>
                   <div
                     style="
@@ -2021,9 +2417,16 @@
       <section class="section_gap" id="pricing"></section>
       <!--Pricing Tables end -->
       <!--Happy Students start-->
-      <section class="white_section section_gap" id="testimonial">
+      <section
+        class="white_section section_gap"
+        id="testimonial"
+        style="padding-top: 40px !important"
+      >
         <div class="container">
-          <div class="heading">
+          <div
+            class="heading"
+            style="padding-bottom: 30px; margin-bottom: 20px"
+          >
             <h1 class="testimonial-heading">What our Students Say</h1>
             <p class="testimonial-subtitle">
               Read testimonials from our successful students who have benefited
@@ -2032,86 +2435,132 @@
               their academic goals.
             </p>
           </div>
-          <div class="imageSlide">
-            <div class="imageBox">
+          <div
+            class="imageSlide"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 25px;
+              padding: 20px 20px 40px 20px;
+            "
+          >
+            <div
+              class="imageBox"
+              style="
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: transparent !important;
+                border: none !important;
+                width: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+              "
+            >
               <img
-                src="images/testimonials/thumb1.jpg"
+                src="images/student1.jpg"
                 width="98"
                 height="98"
-                alt="Student1"
+                alt="Samiksha Pradhan"
+                style="
+                  margin-bottom: 12px;
+                  border-radius: 50%;
+                  border: 5px solid #00aeda;
+                  display: block;
+                "
               />
+              <span
+                style="
+                  color: #273342;
+                  font-weight: 600;
+                  font-size: 0.95em;
+                  margin-top: 0;
+                  display: block;
+                  text-align: center;
+                  white-space: nowrap;
+                "
+                >Samiksha Pradhan</span
+              >
             </div>
-            <div class="imageBox">
+            <div
+              class="imageBox"
+              style="
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: transparent !important;
+                border: none !important;
+                width: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+              "
+            >
               <img
-                src="images/testimonials/thumb2.jpg"
+                src="images/student2.jpg"
                 width="98"
                 height="98"
-                alt="Student2"
+                alt="SaiRaj Samal"
+                style="
+                  margin-bottom: 12px;
+                  border-radius: 50%;
+                  border: 5px solid #00aeda;
+                  display: block;
+                "
               />
+              <span
+                style="
+                  color: #273342;
+                  font-weight: 600;
+                  font-size: 0.95em;
+                  margin-top: 0;
+                  display: block;
+                  text-align: center;
+                  white-space: nowrap;
+                "
+                >SaiRaj Samal</span
+              >
             </div>
-            <div class="imageBox">
+            <div
+              class="imageBox"
+              style="
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: transparent !important;
+                border: none !important;
+                width: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+              "
+            >
               <img
-                src="images/testimonials/thumb3.jpg"
+                src="images/student3.jpg"
                 width="98"
                 height="98"
-                alt="Student3"
+                alt="Lakshya Mishra"
+                style="
+                  margin-bottom: 12px;
+                  border-radius: 50%;
+                  border: 5px solid #00aeda;
+                  display: block;
+                "
               />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb4.jpg"
-                width="98"
-                height="98"
-                alt="Student4"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb5.jpg"
-                width="98"
-                height="98"
-                alt="Student5"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb6.jpg"
-                width="98"
-                height="98"
-                alt="Student6"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb7.jpg"
-                width="98"
-                height="98"
-                alt="Student7"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb8.jpg"
-                width="98"
-                height="98"
-                alt="Student8"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb9.jpg"
-                width="98"
-                height="98"
-                alt="Student9"
-              />
-            </div>
-            <div class="imageBox">
-              <img
-                src="images/testimonials/thumb10.jpg"
-                width="98"
-                height="98"
-                alt="Student10"
-              />
+              <span
+                style="
+                  color: #273342;
+                  font-weight: 600;
+                  font-size: 0.95em;
+                  margin-top: 0;
+                  display: block;
+                  text-align: center;
+                  white-space: nowrap;
+                "
+                >Lakshya Mishra</span
+              >
             </div>
           </div>
           <div class="footerTopContent">
@@ -2119,13 +2568,13 @@
             <ul class="slides testimonialText list-unstyled">
               <li>
                 <p class="font-openBold">
-                  Success Planet transformed my learning experience! The
-                  Mathematics course helped me score 96% in my board exams. The
+                  Success Planet transformed my learning experience! The HTML
+                  and CSS courses helped me score 95% in my board exams. The
                   video explanations are clear, and the practice tests prepared
                   me perfectly. Highly recommended for all 10th standard
                   students!
                 </p>
-                <h3 class="uppercase">Priya Sharma, Delhi Public School</h3>
+                <h3 class="uppercase">Samiksha Pradhan, Delhi Public School</h3>
               </li>
               <li>
                 <p class="font-openBold">
@@ -2133,82 +2582,27 @@
                   comprehensive course made everything crystal clear. The
                   animated videos and practical demonstrations helped me
                   understand even the most difficult topics. I improved from 75%
-                  to 91%!
+                  to 92%!
                 </p>
-                <h3 class="uppercase">Rahul Verma, Kendriya Vidyalaya</h3>
+                <h3 class="uppercase">Rahul Sharma, Kendriya Vidyalaya</h3>
               </li>
               <li>
                 <p class="font-openBold">
                   The best part about Success Planet is learning at my own pace.
                   I could rewatch difficult lessons and practice as many times
                   as needed. The expert teachers are amazing, and their
-                  doubt-clearing sessions are very helpful.
+                  doubt-clearing sessions are very helpful. Scored 93% overall!
                 </p>
-                <h3 class="uppercase">Ananya Patel, St. Mary's School</h3>
+                <h3 class="uppercase">Priya Patel, St. Mary's School</h3>
               </li>
               <li>
                 <p class="font-openBold">
                   Success Planet's study materials and previous year question
                   papers were game-changers for my exam preparation. I could
-                  practice extensively and identify my weak areas. Scored 94%
-                  overall!
+                  practice extensively and identify my weak areas. The Science
+                  course helped me achieve 94%!
                 </p>
-                <h3 class="uppercase">Kavya Reddy, DAV Public School</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  The mobile app feature is fantastic! I could study during my
-                  commute and even download lessons for offline viewing. The
-                  24/7 support team always helped me whenever I had doubts.
-                  Excellent platform!
-                </p>
-                <h3 class="uppercase">Aditya Singh, Modern School</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  Science was my weak subject, but Success Planet's
-                  comprehensive course improved my understanding of Physics,
-                  Chemistry, and Biology skills, and literature understanding
-                  significantly. The sample essays and writing practice were
-                  particularly helpful.
-                </p>
-                <h3 class="uppercase">Meera Nair, Chinmaya Vidyalaya</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  I loved the Social Studies course! The map work tutorials,
-                  historical timelines, and comprehensive notes made studying so
-                  much easier. The teachers explain everything in a way that's
-                  easy to remember for exams.
-                </p>
-                <h3 class="uppercase">Vikram Joshi, Ryan International</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  The certification I received after completing the courses
-                  added value to my academic profile. The platform is
-                  user-friendly, and the quality of content is outstanding.
-                  Worth every penny!
-                </p>
-                <h3 class="uppercase">Sneha Desai, Podar International</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  Success Planet helped me balance my studies with other
-                  activities. The flexible learning schedule allowed me to study
-                  when convenient. The quick revision notes before exams were a
-                  lifesaver!
-                </p>
-                <h3 class="uppercase">Arjun Mehta, GD Goenka School</h3>
-              </li>
-              <li>
-                <p class="font-openBold">
-                  As a parent, I'm extremely satisfied with Success Planet. My
-                  daughter's confidence and grades improved significantly. The
-                  platform provides excellent value for money with quality
-                  education and comprehensive support.
-                </p>
-                <h3 class="uppercase">Parent Review - Mrs. Geeta Kapoor</h3>
+                <h3 class="uppercase">Aryan Singh, DAV Public School</h3>
               </li>
             </ul>
           </div>
@@ -2311,6 +2705,78 @@
         </div>
       </div>
 
+      <!-- Login Required Modal -->
+      <div class="login-required-modal-overlay" id="loginRequiredModal">
+        <div class="login-required-modal">
+          <div class="login-required-modal-header">
+            <div class="login-required-icon">
+              <i class="fa fa-lock"></i>
+            </div>
+            <h2>Login Required</h2>
+            <p style="margin: 10px 0 0; font-size: 1em; opacity: 0.9">
+              Please login to continue
+            </p>
+          </div>
+          <div class="login-required-modal-body">
+            <p>
+              You need to be logged in to enroll in courses. Please login or
+              create a new account to access all our amazing courses and
+              learning resources!
+            </p>
+            <div class="login-required-modal-buttons">
+              <button
+                class="login-required-modal-btn login-required-modal-btn-login"
+                onclick="goToLogin()"
+              >
+                <i class="fa fa-sign-in"></i> Login
+              </button>
+              <button
+                class="login-required-modal-btn login-required-modal-btn-register"
+                onclick="goToRegister()"
+              >
+                <i class="fa fa-user-plus"></i> Register
+              </button>
+              <button
+                class="login-required-modal-btn login-required-modal-btn-cancel"
+                onclick="closeLoginRequiredModal()"
+              >
+                <i class="fa fa-times"></i> Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Already Enrolled Modal -->
+      <div class="already-enrolled-modal-overlay" id="alreadyEnrolledModal">
+        <div class="already-enrolled-modal">
+          <div class="already-enrolled-modal-header">
+            <div class="already-enrolled-icon">
+              <i class="fa fa-check-circle"></i>
+            </div>
+            <h2>Already Enrolled!</h2>
+          </div>
+          <div class="already-enrolled-modal-body">
+            <p>
+              You are already enrolled in
+              <span class="course-name" id="alreadyEnrolledCourseName"></span>
+              course!
+            </p>
+            <p>
+              You can access all course materials, video lessons, and study
+              resources from your profile or by clicking the "Access Course"
+              button.
+            </p>
+            <button
+              class="already-enrolled-modal-btn"
+              onclick="closeAlreadyEnrolledModal()"
+            >
+              <i class="fa fa-check"></i> Got It
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!--have Question start -->
       <section class="grey_section section_gap" id="contact">
         <div class="container">
@@ -2397,13 +2863,12 @@
                           font-size: 0.85em;
                         "
                       >
-                        123 Education Street,<br />
-                        Learning District,<br />
-                        New Delhi - 110001, India
+                        O.P. Jindal School, Jindal Campus<br />
+                        Angul,<br />
+                        Odisha - 759111, India
                       </p>
                     </div>
                   </div>
-
                   <div
                     style="
                       display: flex;
@@ -2446,8 +2911,8 @@
                           font-size: 0.85em;
                         "
                       >
-                        +91 123 456 7890<br />
-                        +91 987 654 3210
+                        +91 7319749216<br />
+                        +91 9776184290
                       </p>
                     </div>
                   </div>
@@ -2494,57 +2959,8 @@
                           font-size: 0.85em;
                         "
                       >
-                        info@successplanet.com<br />
+                        biswajeet.chakra2012@gmail.com<br />
                         support@successplanet.com
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    style="
-                      display: flex;
-                      align-items: start;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    <div
-                      style="
-                        background: #667eea;
-                        color: white;
-                        width: 35px;
-                        height: 35px;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin-right: 10px;
-                        flex-shrink: 0;
-                      "
-                    >
-                      <i class="fa fa-clock-o" style="font-size: 1em"></i>
-                    </div>
-                    <div>
-                      <h4
-                        style="
-                          color: #333;
-                          margin-bottom: 2px;
-                          font-weight: bold;
-                          font-size: 0.9em;
-                        "
-                      >
-                        Working Hours
-                      </h4>
-                      <p
-                        style="
-                          color: #666;
-                          line-height: 1.4;
-                          margin: 0;
-                          font-size: 0.85em;
-                        "
-                      >
-                        Monday - Friday: 9:00 AM - 6:00 PM<br />
-                        Saturday: 10:00 AM - 4:00 PM<br />
-                        Sunday: Closed
                       </p>
                     </div>
                   </div>
@@ -2829,38 +3245,8 @@
                 provide comprehensive courses, expert guidance, and quality
                 educational resources to ensure academic success.
               </p>
-              <h5>We Are Social On</h5>
-              <div class="socialshare">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-google"></i></a>
-                <a href="#"><i class="fa fa-vimeo-square"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
-              </div>
             </div>
             <!-- Footer About us end-->
-            <!-- Footer Recent news start-->
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <h5 class="heading">Recent Updates</h5>
-              <ul class="footerLinks">
-                <li>
-                  <a href="#">New Mathematics Course Launched</a>
-                  <span>by <a href="#">Admin</a> on March 15, 2024</span>
-                </li>
-                <li>
-                  <a href="#">Board Exam Preparation Tips</a>
-                  <span>by <a href="#">Expert Team</a> on March 10, 2024</span>
-                </li>
-                <li>
-                  <a href="#">Student Success Stories - 2024</a>
-                  <span
-                    >by <a href="#">Success Planet</a> on March 5, 2024</span
-                  >
-                </li>
-              </ul>
-            </div>
-            <!-- Footer Recent news end-->
             <!-- Footer How it works start-->
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <h5 class="heading">How it Works?</h5>
@@ -2871,43 +3257,33 @@
               <ul class="list">
                 <li>Register and create your account</li>
                 <li>Choose your preferred courses</li>
-                <li>Access study materials and resources</li>
-                <li>Take practice tests and track progress</li>
               </ul>
             </div>
             <!-- Footer How it works end-->
-            <!-- Footer we accept start-->
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 contactInfo">
-              <h5 class="heading">Payment Options</h5>
-              <p>
-                We offer flexible payment options to make quality education
-                accessible to everyone. Choose from various payment methods for
-                your convenience.
-              </p>
-              <ul>
-                <li>
-                  <img src="images/paypal.gif" width="31" height="22" alt="" />
-                </li>
-                <li>
-                  <img src="images/amazon.gif" width="31" height="22" alt="" />
-                </li>
-                <li>
-                  <img src="images/visa.gif" width="31" height="22" alt="" />
-                </li>
-                <li>
-                  <img src="images/master.gif" width="31" height="22" alt="" />
-                </li>
-                <li>
-                  <img
-                    src="images/discover.gif"
-                    width="31"
-                    height="22"
-                    alt=""
-                  />
-                </li>
+            <!-- Footer Useful Links start-->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <h5 class="heading">Quick Links</h5>
+              <ul class="list">
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonial">Testimonial</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
-            <!-- Footer we accept end-->
+            <!-- Footer Useful Links end-->
+            <!-- Footer Courses Details start-->
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <h5 class="heading">Courses</h5>
+              <ul class="list">
+                <li><a href="#courses">HTML</a></li>
+                <li><a href="#courses">Science</a></li>
+                <li><a href="#courses">CSS</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -2918,8 +3294,9 @@
           <div class="row">
             <div class="pull-left">
               <p>
-                &copy; 2025 Success Planet. All Rights Reserved | Designed for
-                10th Standard Students
+                &copy; 2025 Success Planet. All Rights Reserved | Designed for 6
+                to 8th Standard Students and by 8th Standard Students of O.P.
+                Jindal School Angul.
               </p>
             </div>
             <div class="pull-right">
@@ -3576,8 +3953,7 @@
           var userData = checkUserData();
 
           if (!userData) {
-            alert("Please login or register to enroll in courses!");
-            window.location.href = "login_new.html";
+            showLoginRequiredModal();
             return;
           }
 
@@ -3586,7 +3962,7 @@
 
           // Check if already enrolled
           if (enrolledCourses.indexOf(courseName) !== -1) {
-            alert("You are already enrolled in " + courseName + " course!");
+            showAlreadyEnrolledModal(courseName);
             return;
           }
 
@@ -3615,6 +3991,53 @@
         $("#enrollSuccessModal").on("click", function (e) {
           if ($(e.target).hasClass("enroll-success-modal-overlay")) {
             closeEnrollSuccessModal();
+          }
+        });
+
+        // Login Required Modal Functions
+        window.showLoginRequiredModal = function () {
+          $("#loginRequiredModal").fadeIn(300);
+        };
+
+        window.closeLoginRequiredModal = function () {
+          $("#loginRequiredModal").fadeOut(300);
+        };
+
+        window.goToLogin = function () {
+          closeLoginRequiredModal();
+          setTimeout(function () {
+            window.location.href = "login_new.html";
+          }, 300);
+        };
+
+        window.goToRegister = function () {
+          closeLoginRequiredModal();
+          setTimeout(function () {
+            window.location.href = "register.html";
+          }, 300);
+        };
+
+        // Close login required modal on overlay click
+        $("#loginRequiredModal").on("click", function (e) {
+          if ($(e.target).hasClass("login-required-modal-overlay")) {
+            closeLoginRequiredModal();
+          }
+        });
+
+        // Already Enrolled Modal Functions
+        window.showAlreadyEnrolledModal = function (courseName) {
+          $("#alreadyEnrolledCourseName").text(courseName);
+          $("#alreadyEnrolledModal").fadeIn(300);
+        };
+
+        window.closeAlreadyEnrolledModal = function () {
+          $("#alreadyEnrolledModal").fadeOut(300);
+        };
+
+        // Close already enrolled modal on overlay click
+        $("#alreadyEnrolledModal").on("click", function (e) {
+          if ($(e.target).hasClass("already-enrolled-modal-overlay")) {
+            closeAlreadyEnrolledModal();
           }
         });
       });
