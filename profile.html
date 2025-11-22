@@ -75,6 +75,7 @@
       }
       .profile-container {
         padding: 60px 0;
+        margin-bottom: 120px;
         min-height: calc(100vh - 200px);
       }
       .profile-card {
@@ -103,6 +104,7 @@
         color: white;
         position: relative;
         overflow: hidden;
+        word-wrap: break-word;
       }
       .profile-header::before {
         content: "";
@@ -157,6 +159,10 @@
         margin: 0;
         position: relative;
         z-index: 1;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        padding: 0 20px;
+        max-width: 100%;
       }
       .profile-body {
         padding: 50px 40px;
@@ -173,6 +179,8 @@
         border-radius: 15px;
         border-left: 4px solid #667eea;
         transition: all 0.3s;
+        overflow-wrap: break-word;
+        word-break: break-word;
       }
       .info-card:hover {
         transform: translateY(-5px);
@@ -205,6 +213,9 @@
         font-size: 1.2em;
         margin: 0;
         font-weight: 600;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
       }
       .account-status {
         background: linear-gradient(135deg, #f5d76e 0%, #f4c430 100%);
@@ -281,11 +292,21 @@
         .profile-header {
           padding: 40px 20px;
         }
+        .profile-header h1 {
+          font-size: 1.8em;
+        }
+        .profile-header p {
+          font-size: 1em;
+          padding: 0 10px;
+        }
         .profile-body {
           padding: 30px 20px;
         }
         .profile-info-grid {
           grid-template-columns: 1fr;
+        }
+        .info-card p {
+          font-size: 1em;
         }
       }
       /* Logout Confirmation Modal */
@@ -544,10 +565,7 @@
             <div class="container">
               <!-- Navbar start -->
               <div class="navwrapper">
-                <div
-                  class="navbar navbar-inverse navbar-fixed-top"
-                  style="padding-top: 0px !important"
-                >
+                <div class="navbar navbar-inverse navbar-static-top">
                   <div class="container">
                     <div class="logo">
                       <a href="index.html"
@@ -658,7 +676,7 @@
                   </div>
 
                   <div class="account-status">
-                    <h3><i class="fa fa-info-circle"></i>Account Status</h3>
+                    <h3><i class="fa fa-info-circle"></i> Account Status</h3>
                     <p id="accountStatus">Active</p>
                   </div>
 
