@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Metas Page details-->
-    <title>Success Planet - Online Learning Platforms</title>
+    <title>
+      Success Planet - Online Learning Platform for 8th Standard Students
+    </title>
     <meta
       name="description"
-      content="Comprehensive online learning platform for 10th standard students. Expert teachers, video lessons, practice tests, and study materials for HTML, CSS, and Science courses."
+      content="Comprehensive online learning platform for 8th standard students. Expert teachers, video lessons, practice tests, and study materials for HTML, CSS, and Science courses."
     />
     <meta name="author" content="Success Planet" />
     <!-- Mobile Specific Metas-->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--main style-->
     <link
       rel="stylesheet"
       type="text/css"
@@ -68,6 +68,83 @@
       .navbar-nav li a:hover {
         color: #4caf50 !important;
         transition: color 0.3s;
+      }
+
+      /* Mobile Navbar Fixes */
+      @media (max-width: 768px) {
+        /* Logo alignment fix - keep text on one line */
+        .logo {
+          display: flex !important;
+          align-items: center;
+          float: none !important;
+          margin: 0 !important;
+          padding: 10px 0;
+        }
+
+        .logo a {
+          display: flex !important;
+          align-items: center;
+          white-space: nowrap;
+          font-size: 28px !important;
+        }
+
+        .logo a span.img-circle {
+          width: 45px !important;
+          height: 45px !important;
+          font-size: 40px !important;
+          line-height: 40px !important;
+          margin-right: 5px !important;
+          flex-shrink: 0;
+        }
+
+        /* Remove default border/highlight from nav items */
+        .navbar-nav > li > a,
+        .navbar-inverse .navbar-nav > li > a,
+        .navbar-inverse .navbar-nav > .active > a,
+        .navbar-inverse .navbar-nav > .active > a:hover,
+        .navbar-inverse .navbar-nav > .active > a:focus,
+        .navbar.navbar-inverse.navbar-static-top a {
+          border: none !important;
+          border-bottom: none !important;
+          background: transparent !important;
+        }
+
+        /* Only show border on actual hover */
+        .navbar-nav > li > a:hover,
+        .navbar-nav > li > a:focus {
+          background: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Fix navbar collapse styling */
+        .navbar-collapse {
+          background: #3d3d68 !important;
+          border: none !important;
+          box-shadow: none !important;
+          margin: 0 -15px;
+          padding: 0 15px;
+        }
+
+        .navbar-nav {
+          margin: 10px 0 !important;
+          text-align: center !important;
+        }
+
+        .navbar-nav > li {
+          display: block !important;
+          float: none !important;
+          border-bottom: 1px solid #4caf50 !important;
+        }
+
+        .navbar-nav > li:last-child {
+          border-bottom: none !important;
+        }
+
+        .navbar-nav > li > a {
+          padding: 15px 15px !important;
+          display: block !important;
+          color: #fff !important;
+          border: none !important;
+        }
       }
 
       .heading h1 {
@@ -383,6 +460,7 @@
         z-index: 99999;
         animation: fadeIn 0.3s ease;
       }
+
       .subscribe-success-modal {
         position: fixed;
         top: 50%;
@@ -398,6 +476,7 @@
         animation: slideDown 0.4s ease;
         overflow: hidden;
       }
+
       .subscribe-success-modal-header {
         background: linear-gradient(135deg, #f5d76e 0%, #f4c430 100%);
         padding: 30px;
@@ -405,6 +484,7 @@
         color: #273342;
         position: relative;
       }
+
       .subscribe-success-icon {
         width: 80px;
         height: 80px;
@@ -417,26 +497,31 @@
         animation: scaleIn 0.5s ease 0.2s both;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       .subscribe-success-icon i {
         font-size: 40px;
         color: #f5d76e;
       }
+
       .subscribe-success-modal-header h2 {
         margin: 0;
         font-size: 1.8em;
         font-weight: bold;
         color: #273342;
       }
+
       .subscribe-success-modal-body {
         padding: 30px;
         text-align: center;
       }
+
       .subscribe-success-modal-body p {
         color: #666;
         font-size: 1em;
         line-height: 1.6;
         margin-bottom: 25px;
       }
+
       .subscribe-success-modal-btn {
         background: linear-gradient(135deg, #f5d76e 0%, #f4c430 100%);
         color: #273342;
@@ -451,32 +536,39 @@
         text-transform: uppercase;
         letter-spacing: 1px;
       }
+
       .subscribe-success-modal-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(245, 215, 110, 0.5);
       }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
       }
+
       @keyframes slideDown {
         from {
           opacity: 0;
           transform: translate(-50%, -60%);
         }
+
         to {
           opacity: 1;
           transform: translate(-50%, -50%);
         }
       }
+
       @keyframes scaleIn {
         from {
           transform: scale(0);
         }
+
         to {
           transform: scale(1);
         }
@@ -494,6 +586,7 @@
         z-index: 99999;
         animation: fadeIn 0.3s ease;
       }
+
       .enroll-success-modal {
         position: fixed;
         top: 50%;
@@ -509,6 +602,7 @@
         animation: slideDown 0.4s ease;
         overflow: hidden;
       }
+
       .enroll-success-modal-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 30px;
@@ -516,6 +610,7 @@
         color: white;
         position: relative;
       }
+
       .enroll-success-icon {
         width: 80px;
         height: 80px;
@@ -528,31 +623,37 @@
         animation: scaleIn 0.5s ease 0.2s both;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       .enroll-success-icon i {
         font-size: 40px;
         color: #667eea;
       }
+
       .enroll-success-modal-header h2 {
         margin: 0;
         font-size: 1.8em;
         font-weight: bold;
         color: white;
       }
+
       .enroll-success-modal-body {
         padding: 30px;
         text-align: center;
       }
+
       .enroll-success-modal-body p {
         color: #666;
         font-size: 1em;
         line-height: 1.6;
         margin-bottom: 25px;
       }
+
       .enroll-success-modal-body .course-name {
         color: #667eea;
         font-weight: bold;
         font-size: 1.1em;
       }
+
       .enroll-success-modal-btn {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -567,6 +668,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
       }
+
       .enroll-success-modal-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
@@ -584,6 +686,7 @@
         z-index: 99999;
         animation: fadeIn 0.3s ease;
       }
+
       .login-required-modal {
         position: fixed;
         top: 50%;
@@ -599,6 +702,7 @@
         animation: slideDown 0.4s ease;
         overflow: hidden;
       }
+
       .login-required-modal-header {
         background: linear-gradient(135deg, #f5d76e 0%, #f4c430 100%);
         padding: 40px 30px;
@@ -606,6 +710,7 @@
         color: #273342;
         position: relative;
       }
+
       .login-required-icon {
         width: 100px;
         height: 100px;
@@ -618,45 +723,54 @@
         animation: scaleIn 0.5s ease 0.2s both;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       .login-required-icon i {
         font-size: 50px;
         color: #f5d76e;
         animation: shake 0.6s ease 0.4s both;
       }
+
       @keyframes shake {
         0%,
         100% {
           transform: translateX(0) rotate(0deg);
         }
+
         25% {
           transform: translateX(-10px) rotate(-5deg);
         }
+
         75% {
           transform: translateX(10px) rotate(5deg);
         }
       }
+
       .login-required-modal-header h2 {
         margin: 0;
         font-size: 2em;
         font-weight: bold;
         color: #273342;
       }
+
       .login-required-modal-body {
         padding: 40px 30px;
         text-align: center;
       }
+
       .login-required-modal-body p {
         color: #666;
         font-size: 1.1em;
         line-height: 1.6;
         margin-bottom: 30px;
       }
+
       .login-required-modal-buttons {
         display: flex;
         gap: 15px;
         justify-content: center;
         flex-wrap: wrap;
       }
+
       .login-required-modal-btn {
         padding: 15px 35px;
         border-radius: 50px;
@@ -668,29 +782,35 @@
         letter-spacing: 1px;
         border: none;
       }
+
       .login-required-modal-btn-login {
         background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
         color: white;
         box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
       }
+
       .login-required-modal-btn-login:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
       }
+
       .login-required-modal-btn-register {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
       }
+
       .login-required-modal-btn-register:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
       }
+
       .login-required-modal-btn-cancel {
         background: #f8f9fa;
         color: #666;
         border: 2px solid #e0e0e0;
       }
+
       .login-required-modal-btn-cancel:hover {
         background: #e0e0e0;
         transform: translateY(-2px);
@@ -709,6 +829,7 @@
         z-index: 99999;
         animation: fadeIn 0.3s ease;
       }
+
       .already-enrolled-modal {
         position: fixed;
         top: 50%;
@@ -724,6 +845,7 @@
         animation: slideDown 0.4s ease;
         overflow: hidden;
       }
+
       .already-enrolled-modal-header {
         background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
         padding: 40px 30px;
@@ -731,6 +853,7 @@
         color: white;
         position: relative;
       }
+
       .already-enrolled-icon {
         width: 100px;
         height: 100px;
@@ -743,31 +866,37 @@
         animation: scaleIn 0.5s ease 0.2s both;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       .already-enrolled-icon i {
         font-size: 50px;
         color: #ff9800;
       }
+
       .already-enrolled-modal-header h2 {
         margin: 0;
         font-size: 2em;
         font-weight: bold;
         color: white;
       }
+
       .already-enrolled-modal-body {
         padding: 40px 30px;
         text-align: center;
       }
+
       .already-enrolled-modal-body p {
         color: #666;
         font-size: 1.1em;
         line-height: 1.6;
         margin-bottom: 30px;
       }
+
       .already-enrolled-modal-body .course-name {
         color: #ff9800;
         font-weight: bold;
         font-size: 1.2em;
       }
+
       .already-enrolled-modal-btn {
         background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
         color: white;
@@ -782,6 +911,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
       }
+
       .already-enrolled-modal-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(255, 152, 0, 0.5);
@@ -799,6 +929,7 @@
         z-index: 99999;
         animation: fadeIn 0.3s ease;
       }
+
       .contact-success-modal {
         position: fixed;
         top: 50%;
@@ -814,6 +945,7 @@
         animation: slideDown 0.4s ease;
         overflow: hidden;
       }
+
       .contact-success-modal-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 30px;
@@ -821,6 +953,7 @@
         color: white;
         position: relative;
       }
+
       .contact-success-icon {
         width: 80px;
         height: 80px;
@@ -833,26 +966,31 @@
         animation: scaleIn 0.5s ease 0.2s both;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
       .contact-success-icon i {
         font-size: 40px;
         color: #667eea;
       }
+
       .contact-success-modal-header h2 {
         margin: 0;
         font-size: 1.8em;
         font-weight: bold;
         color: white;
       }
+
       .contact-success-modal-body {
         padding: 30px;
         text-align: center;
       }
+
       .contact-success-modal-body p {
         color: #666;
         font-size: 1em;
         line-height: 1.6;
         margin-bottom: 25px;
       }
+
       .contact-success-modal-btn {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -867,6 +1005,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
       }
+
       .contact-success-modal-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
@@ -992,6 +1131,7 @@
           opacity: 0;
           transform: translateX(-30px);
         }
+
         to {
           opacity: 1;
           transform: translateX(0);
@@ -1003,6 +1143,7 @@
           opacity: 0;
           transform: translateY(20px);
         }
+
         to {
           opacity: 1;
           transform: translateY(0);
@@ -1015,6 +1156,7 @@
         100% {
           opacity: 0.4;
         }
+
         50% {
           opacity: 1;
         }
@@ -1062,7 +1204,7 @@
         padding-left: 20px;
       }
 
-      /* #courses .heading::before {
+      #courses .heading::before {
         content: "";
         position: absolute;
         left: 0;
@@ -1071,7 +1213,7 @@
         width: 5px;
         background: #f5d76e;
         border-radius: 3px;
-      } */
+      }
 
       #courses .heading h1 {
         font-size: 3.5em;
@@ -1151,8 +1293,8 @@
                           <li class="menuItem" id="loginMenuItem">
                             <a href="login_new.html">Login</a>
                           </li>
-                          <li class="menuItem" id="adminMenuItem">
-                            <a href="Admin.html" class="smooth">Admin</a>
+                          <li class="menuItem">
+                            <a href="Admin.html">Admin</a>
                           </li>
                           <li class="menuItem" id="registerMenuItem">
                             <a href="register.html">Register</a>
@@ -1287,7 +1429,7 @@
                     "
                   >
                     Fulfil your aspirations and transform your life with one of
-                    India's leading learning platforms for 10th standard
+                    India's leading learning platforms for 8th standard
                     students.
                   </p>
 
@@ -1530,7 +1672,7 @@
             <h1><span>Memberships</span>Include</h1>
             <p>
               Get access to comprehensive learning resources designed
-              specifically for 10th standard students.<br />
+              specifically for 8th standard students.<br />
               Our platform offers everything you need to excel in your board
               exams and build a strong foundation for your future.
             </p>
@@ -1684,7 +1826,25 @@
                   padding: 30px 20px;
                   transition: transform 0.3s;
                 "
-              ></div>
+              >
+                <span
+                  style="
+                    font-size: 3em;
+                    color: #00bcd4;
+                    display: block;
+                    margin-bottom: 20px;
+                  "
+                  ><i class="fa fa-comments"></i
+                ></span>
+                <h3 style="color: #333; margin-bottom: 15px">
+                  Discussion Forum
+                </h3>
+                <p style="color: #666; line-height: 1.6">
+                  Join our community discussion forum to interact with fellow
+                  students. Share ideas, ask questions, and learn together in a
+                  collaborative environment.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1696,8 +1856,8 @@
           <div class="heading">
             <h1><span>Available</span>Courses</h1>
             <p>
-              Explore our comprehensive course catalog designed for 10th
-              standard students.<br />
+              Explore our comprehensive course catalog designed for 8th standard
+              students.<br />
               Each course includes video lectures, study materials, practice
               tests, and doubt-solving sessions.
             </p>
@@ -1864,7 +2024,7 @@
                         Master all concepts of Science including Physics,
                         Chemistry, and Biology. Our comprehensive course covers
                         fundamental principles, practical experiments, and
-                        real-world applications. Perfect for 10th standard
+                        real-world applications. Perfect for 8th standard
                         students preparing for board exams.
                       </p>
                       <p style="color: #666; line-height: 1.8">
@@ -1900,7 +2060,7 @@
           <div class="heading" style="color: white">
             <h1 style="color: white">POPULAR COURSES</h1>
             <p style="color: rgba(255, 255, 255, 0.9)">
-              Most enrolled courses by 10th standard students<br />
+              Most enrolled courses by 8th standard students<br />
               Join thousands of students who are already learning with us
             </p>
           </div>
@@ -2096,7 +2256,7 @@
 
       <!--fun facts end -->
       <!-- Teachers details start-->
-      <section class="grey_section section_gap" id="testimonial">
+      <section class="grey_section section_gap" id="testimonial>
         <div class="container">
           <div class="heading" style="text-align: center">
             <h1>Testimonial</h1>
@@ -2414,7 +2574,7 @@
           >
             <h1 class="testimonial-heading">What our Students Say</h1>
             <p class="testimonial-subtitle">
-              Read testimonials from our successful students who have benefited
+              Read these informations from our successful students who have benefited
               from our courses.<br />
               Their success stories inspire thousands of students to achieve
               their academic goals.
@@ -2556,7 +2716,7 @@
                   Success Planet transformed my learning experience! The HTML
                   and CSS courses helped me score 95% in my board exams. The
                   video explanations are clear, and the practice tests prepared
-                  me perfectly. Highly recommended for all 10th standard
+                  me perfectly. Highly recommended for all 8th standard
                   students!
                 </p>
                 <h3 class="uppercase">Samiksha Pradhan, Delhi Public School</h3>
@@ -3226,7 +3386,7 @@
               <h5 class="heading">About us</h5>
               <p>
                 Success Planet is a leading online learning platform dedicated
-                to helping 10th standard students excel in their board exams. We
+                to helping 8th standard students excel in their board exams. We
                 provide comprehensive courses, expert guidance, and quality
                 educational resources to ensure academic success.
               </p>
@@ -3658,22 +3818,35 @@
           if (userData) {
             if (!userData.enrolledCourses) {
               userData.enrolledCourses = [];
-              saveEnrolledCourses([]);
+              // Don't save empty array immediately to avoid unnecessary writes,
+              // but return it.
             }
             return userData.enrolledCourses;
           }
           return [];
         }
 
-        // Save enrolled courses for current user
+        // Save enrolled courses for current user AND sync to master list
         function saveEnrolledCourses(courses) {
           var userData = checkUserData();
           if (userData) {
+            // 1. Update Session Data
             userData.enrolledCourses = courses;
             var expirationDate = new Date();
             expirationDate.setDate(expirationDate.getDate() + 3);
             userData.expirationDate = expirationDate.toISOString();
             localStorage.setItem("userData", JSON.stringify(userData));
+
+            // 2. Sync with Master User List (ls_users)
+            var users = JSON.parse(localStorage.getItem("ls_users") || "[]");
+            var userIndex = users.findIndex(function (u) {
+              return u.email === userData.email;
+            });
+
+            if (userIndex !== -1) {
+              users[userIndex].enrolledCourses = courses;
+              localStorage.setItem("ls_users", JSON.stringify(users));
+            }
           }
         }
 
@@ -3704,13 +3877,20 @@
         }
 
         // Update enrolled status for courses
+        // Update enrolled status for courses
         function updateEnrolledStatus() {
           var enrolledCourses = getEnrolledCourses();
+          // Helper to check if enrolled (handles both old string array and new object array)
+          var isEnrolled = function (courseName) {
+            return enrolledCourses.some(function (c) {
+              return (typeof c === "string" ? c : c.name) === courseName;
+            });
+          };
 
           // Update enroll buttons to show enrolled status
           $(".html-enroll-btn").each(function () {
             var $btn = $(this);
-            if (enrolledCourses.indexOf("HTML") !== -1) {
+            if (isEnrolled("HTML")) {
               $btn
                 .text("Enrolled ✓")
                 .css({
@@ -3727,7 +3907,7 @@
 
           $(".css-enroll-btn").each(function () {
             var $btn = $(this);
-            if (enrolledCourses.indexOf("CSS") !== -1) {
+            if (isEnrolled("CSS")) {
               $btn
                 .text("Enrolled ✓")
                 .css({
@@ -3744,7 +3924,7 @@
 
           $(".science-enroll-btn").each(function () {
             var $btn = $(this);
-            if (enrolledCourses.indexOf("Science") !== -1) {
+            if (isEnrolled("Science")) {
               $btn
                 .text("Enrolled ✓")
                 .css({
@@ -3934,6 +4114,7 @@
         });
 
         // Enrollment Functions
+        // Enrollment Functions
         window.enrollCourse = function (courseName) {
           var userData = checkUserData();
 
@@ -3945,14 +4126,26 @@
           // Get current enrolled courses
           var enrolledCourses = getEnrolledCourses();
 
-          // Check if already enrolled
-          if (enrolledCourses.indexOf(courseName) !== -1) {
+          // Check if already enrolled (handle objects)
+          var isAlreadyEnrolled = enrolledCourses.some(function (c) {
+            return (typeof c === "string" ? c : c.name) === courseName;
+          });
+
+          if (isAlreadyEnrolled) {
             showAlreadyEnrolledModal(courseName);
             return;
           }
 
-          // Add course to enrolled list
-          enrolledCourses.push(courseName);
+          // Add course to enrolled list as OBJECT
+          var newCourse = {
+            id: courseName.toLowerCase().replace(/\s+/g, "-"),
+            name: courseName,
+            progress: 0,
+            enrolledDate: new Date().toISOString(),
+            status: "In Progress",
+          };
+
+          enrolledCourses.push(newCourse);
           saveEnrolledCourses(enrolledCourses);
 
           // Set the course name in the modal

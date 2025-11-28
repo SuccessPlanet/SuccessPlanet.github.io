@@ -2,13 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Admin Panel - Success Planet</title>
-    <!--main style-->
     <link
       rel="stylesheet"
       type="text/css"
@@ -30,10 +25,8 @@
         --card: #fff;
         --muted: #6b7280;
         --accent: #f5d76e;
-        /* Success Planet Yellow */
         --accent-dark: #f4c430;
         --primary: #2f4e71;
-        /* Success Planet Blue */
       }
 
       body {
@@ -166,8 +159,6 @@
       .modal-overlay.active .modal-content-custom {
         transform: scale(1);
       }
-
-      /* Tooltip Styles */
       .action-btn {
         position: relative;
         margin: 0 2px;
@@ -197,8 +188,6 @@
           transform: translateX(-50%) translateY(-5px);
         }
       }
-
-      /* Success Modal Specifics */
       .success-icon-wrapper {
         width: 80px;
         height: 80px;
@@ -275,6 +264,191 @@
 
       .stat-label {
         color: var(--muted);
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .dashboard-header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--accent);
+        display: block;
+      }
+
+      .user-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+          width: 100%;
+        }
+
+        .stat-card {
+          margin-bottom: 15px;
+        }
+        .dashboard-header {
+          display: block !important;
+          text-align: center;
+          padding: 15px 15px 20px;
+          position: relative;
+        }
+
+        .dashboard-header > .logo {
+          display: block !important;
+          width: 100%;
+          text-align: center;
+          font-size: 22px !important;
+          margin-bottom: 18px !important;
+          padding: 8px 0;
+          color: var(--accent) !important;
+          font-weight: bold;
+          position: relative;
+          z-index: 2;
+        }
+
+        .dashboard-header > .logo span {
+          font-size: 0.5em !important;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 8px;
+          background: var(--accent);
+          color: #333;
+          padding: 3px 8px;
+          border-radius: 4px;
+        }
+
+        .dashboard-header > .user-controls {
+          display: block !important;
+          width: 100%;
+          text-align: center;
+          margin-top: 0;
+          padding: 0 10px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .dashboard-header > .user-controls button {
+          display: block !important;
+          width: 100%;
+          max-width: 280px;
+          padding: 12px 20px;
+          font-size: 14px;
+          margin: 0 auto 12px auto;
+        }
+
+        .dashboard-header > .user-controls button:last-child {
+          margin-bottom: 0;
+        }
+        .table-responsive {
+          display: block;
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .modal-content-custom {
+          width: 95%;
+          margin: 10px;
+          padding: 20px;
+        }
+        .card > div:first-child {
+          flex-direction: column;
+          align-items: stretch !important;
+          gap: 10px;
+        }
+
+        #searchBox {
+          width: 100% !important;
+        }
+
+        .btn-primary-custom {
+          width: 100%;
+        }
+        .row {
+          margin-left: -5px;
+          margin-right: -5px;
+        }
+
+        .row > [class*="col-"] {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .card {
+          padding: 15px;
+        }
+        .card h3 {
+          font-size: 1.1em;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 15px !important;
+        }
+        .card > div:first-child > div {
+          width: 100% !important;
+          max-width: 100% !important;
+          justify-content: center !important;
+        }
+        .btn-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          justify-content: center;
+        }
+
+        .btn-group .btn {
+          padding: 5px 8px;
+          font-size: 12px;
+        }
+      }
+      @media (max-width: 480px) {
+        .dashboard-header {
+          padding: 10px 10px 15px;
+        }
+
+        .dashboard-header .logo {
+          font-size: 18px !important;
+        }
+
+        .user-controls button {
+          max-width: 100%;
+          padding: 10px 15px;
+          font-size: 13px;
+        }
+
+        .stat-card {
+          padding: 15px;
+        }
+
+        .stat-number {
+          font-size: 1.5em;
+        }
+
+        .stat-label {
+          font-size: 0.85em;
+        }
+
+        .card {
+          padding: 12px;
+          border-radius: 8px;
+        }
+
+        .modal-content-custom {
+          padding: 15px;
+        }
+
+        .table-custom th,
+        .table-custom td {
+          padding: 8px 5px;
+          font-size: 12px;
+        }
       }
     </style>
   </head>
@@ -496,20 +670,61 @@
         </button>
       </div>
     </div>
-
+    <div id="progressModal" class="modal-overlay">
+      <div class="modal-content-custom" style="max-width: 600px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+          "
+        >
+          <h3 style="margin: 0; color: var(--primary); font-weight: 700">
+            Manage Progress
+          </h3>
+          <button
+            onclick="closeModal('progressModal')"
+            style="
+              background: none;
+              border: none;
+              font-size: 20px;
+              cursor: pointer;
+            "
+          >
+            &times;
+          </button>
+        </div>
+        <input type="hidden" id="progress_user_id" />
+        <div
+          id="courseListContainer"
+          style="max-height: 400px; overflow-y: auto"
+        ></div>
+        <div style="text-align: right; margin-top: 25px">
+          <button
+            class="btn btn-default"
+            onclick="closeModal('progressModal')"
+            style="margin-right: 10px"
+          >
+            Close
+          </button>
+          <button class="btn btn-primary-custom" onclick="saveProgress()">
+            Save Progress
+          </button>
+        </div>
+      </div>
+    </div>
     <script>
       const qs = (s) => document.querySelector(s);
       const qsa = (s) => Array.from(document.querySelectorAll(s));
-
-      // Initialize Superadmin
       const initSuperAdmin = () => {
         const admin = JSON.parse(localStorage.getItem("super_admin") || "null");
-        if (!admin || admin.password !== "admin@3698") {
+        if (!admin || admin.password !== "admin@123") {
           localStorage.setItem(
             "super_admin",
             JSON.stringify({
               email: "superadmin@successplanet.com",
-              password: "admin@3698",
+              password: "admin@123",
             })
           );
         }
@@ -594,16 +809,17 @@
 
         return `
           <div style="background: var(--primary); color: white; padding: 15px 0; margin-bottom: 30px;">
-            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="logo">Success Planet <span style="font-size: 0.6em; background: var(--accent); color: #333; padding: 2px 6px; border-radius: 4px;">ADMIN</span></div>
-              <div style="display:flex; align-items:center; gap:15px;">
-                <span>Welcome, ${currentUser.email || "Admin"}</span>
-                ${
-                  isSuperAdmin
-                    ? `<button class="btn btn-sm btn-custom" onclick="openCreateAdminModal()"><i class="fa fa-plus"></i> Create Admin</button>`
-                    : ""
-                }
-                <button class="btn btn-sm btn-danger-custom" onclick="logout()">Logout</button>
+            <div class="container">
+              <div class="dashboard-header">
+                <div class="logo">Success Planet <span style="font-size: 0.6em; background: var(--accent); color: #333; padding: 2px 6px; border-radius: 4px; vertical-align: middle;">ADMIN</span></div>
+                <div class="user-controls">
+                  ${
+                    isSuperAdmin
+                      ? `<button class="btn btn-custom" onclick="openCreateAdminModal()"><i class="fa fa-plus"></i> Create Admin</button>`
+                      : ""
+                  }
+                  <button class="btn btn-danger-custom" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+                </div>
               </div>
             </div>
           </div>
@@ -631,10 +847,10 @@
             </div>
 
             <div class="card">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
                 <h3 style="margin: 0; color: var(--primary);">User Management</h3>
-                <div style="display: flex; gap: 10px;">
-                   <input id="searchBox" class="form-control" placeholder="Search users..." style="width: 250px;" oninput="renderTable()" />
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; width: 100%; max-width: 400px; justify-content: flex-end;">
+                   <input id="searchBox" class="form-control" placeholder="Search users..." style="flex-grow: 1;" oninput="renderTable()" />
                    <button class="btn btn-primary-custom" onclick="exportExcel()"><i class="fa fa-download"></i> Export</button>
                 </div>
               </div>
@@ -646,6 +862,7 @@
                       <th>Name</th>
                       <th>Email</th>
                       <th>Class</th>
+                      <th>Courses</th>
                       <th>Status</th>
                       <th>Actions</th>
                     </tr>
@@ -660,9 +877,6 @@
           </div>
         `;
       }
-
-      // ---------- Logic ----------
-
       function render() {
         const route = currentRoute();
         const app = document.getElementById("app");
@@ -894,6 +1108,11 @@
             <td>${u.email}</td>
             <td>${u.class || "N/A"}</td>
             <td>
+                <span class="badge" style="background: #e0e0e0; color: #333;">${
+                  (u.enrolledCourses || []).length
+                } Enrolled</span>
+            </td>
+            <td>
               ${
                 u.verified
                   ? '<span class="badge-verified">Verified</span>'
@@ -910,6 +1129,9 @@
                 <button class="btn btn-sm btn-info action-btn" data-tooltip="Edit User" onclick="openEditModal(${
                   u.id
                 })"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-sm btn-warning action-btn" data-tooltip="Manage Progress" onclick="openProgressModal(${
+                  u.id
+                })"><i class="fa fa-bar-chart"></i></button>
                 <button class="btn btn-sm btn-danger action-btn" data-tooltip="Delete User" onclick="openDeleteModal(${
                   u.id
                 })"><i class="fa fa-trash"></i></button>
@@ -955,7 +1177,7 @@
 
         if (user) {
           user.name = qs("#edit_name").value;
-          user.fullName = qs("#edit_name").value;
+          user.fullName = qs("#edit_name").value; // syncing both fields
           user.email = qs("#edit_email").value;
           user.phone = qs("#edit_phone").value;
           user.class = qs("#edit_class").value;
@@ -984,6 +1206,82 @@
 
       function closeModal(id) {
         qs("#" + id).classList.remove("active");
+      }
+
+      function openProgressModal(id) {
+        const users = loadUsers();
+        const user = users.find((u) => u.id === id);
+        if (!user) return;
+
+        qs("#progress_user_id").value = id;
+        const container = qs("#courseListContainer");
+        container.innerHTML = "";
+
+        const courses = user.enrolledCourses || [];
+
+        if (courses.length === 0) {
+          container.innerHTML =
+            '<p class="text-center text-muted" style="padding: 20px;">User has not enrolled in any courses yet.</p>';
+        } else {
+          courses.forEach((course, index) => {
+            const name = typeof course === "string" ? course : course.name;
+            const progress =
+              typeof course === "string" ? 0 : course.progress || 0;
+
+            container.innerHTML += `
+              <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--accent);">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                      <strong style="font-size:1.1em;">${name}</strong>
+                      <span class="badge" style="background: #e0e0e0; color: #333;">${progress}% Completed</span>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0;">
+                      <label style="font-size:0.9em; color:var(--muted);">Update Progress (0-100%)</label>
+                      <div style="display:flex; gap:10px;">
+                          <input type="range" class="form-control" min="0" max="100" value="${progress}" 
+                              oninput="document.getElementById('prog_val_${index}').innerText = this.value + '%'; document.getElementById('prog_input_${index}').value = this.value;" 
+                              style="flex:1;">
+                          <span id="prog_val_${index}" style="width:40px; font-weight:bold; line-height:35px;">${progress}%</span>
+                          <input type="hidden" id="prog_input_${index}" value="${progress}" class="course-progress-input" data-course-name="${name}">
+                      </div>
+                  </div>
+              </div>
+           `;
+          });
+        }
+
+        qs("#progressModal").classList.add("active");
+      }
+
+      function saveProgress() {
+        const id = Number(qs("#progress_user_id").value);
+        const users = loadUsers();
+        const user = users.find((u) => u.id === id);
+
+        if (user) {
+          const inputs = qsa(".course-progress-input");
+          let updatedCourses = [];
+
+          inputs.forEach((input) => {
+            const name = input.getAttribute("data-course-name");
+            const progress = Number(input.value);
+
+            updatedCourses.push({
+              id: name.toLowerCase().replace(/\s+/g, "-"),
+              name: name,
+              progress: progress,
+              status: progress >= 100 ? "Completed" : "In Progress",
+              enrolledDate: new Date().toISOString(),
+            });
+          });
+          if (updatedCourses.length > 0) {
+            user.enrolledCourses = updatedCourses;
+            saveUsers(users);
+            showSuccess("Progress updated successfully!");
+            closeModal("progressModal");
+          } else {
+            closeModal("progressModal");
+          }
+        }
       }
 
       function showSuccess(msg) {
