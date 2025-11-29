@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Admin Panel - Success Planet</title>
+    <!--main style-->
     <link
       rel="stylesheet"
       type="text/css"
@@ -25,8 +26,10 @@
         --card: #fff;
         --muted: #6b7280;
         --accent: #f5d76e;
+        /* Success Planet Yellow */
         --accent-dark: #f4c430;
         --primary: #2f4e71;
+        /* Success Planet Blue */
       }
 
       body {
@@ -159,6 +162,8 @@
       .modal-overlay.active .modal-content-custom {
         transform: scale(1);
       }
+
+      /* Tooltip Styles */
       .action-btn {
         position: relative;
         margin: 0 2px;
@@ -188,6 +193,8 @@
           transform: translateX(-50%) translateY(-5px);
         }
       }
+
+      /* Success Modal Specifics */
       .success-icon-wrapper {
         width: 80px;
         height: 80px;
@@ -286,6 +293,7 @@
         gap: 15px;
         flex-wrap: wrap;
       }
+
       /* Mobile Responsiveness */
       @media (max-width: 768px) {
         .container {
@@ -296,6 +304,8 @@
         .stat-card {
           margin-bottom: 15px;
         }
+
+        /* Stack the header elements - logo first, controls second */
         .dashboard-header {
           display: block !important;
           text-align: center;
@@ -349,17 +359,23 @@
         .dashboard-header > .user-controls button:last-child {
           margin-bottom: 0;
         }
+
+        /* Make tables scrollable */
         .table-responsive {
           display: block;
           width: 100%;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
         }
+
+        /* Adjust Modal Width */
         .modal-content-custom {
           width: 95%;
           margin: 10px;
           padding: 20px;
         }
+
+        /* Stack Search and Export buttons */
         .card > div:first-child {
           flex-direction: column;
           align-items: stretch !important;
@@ -373,6 +389,8 @@
         .btn-primary-custom {
           width: 100%;
         }
+
+        /* Stat cards row fix */
         .row {
           margin-left: -5px;
           margin-right: -5px;
@@ -382,20 +400,28 @@
           padding-left: 5px;
           padding-right: 5px;
         }
+
+        /* Card padding fix */
         .card {
           padding: 15px;
         }
+
+        /* User Management header fix */
         .card h3 {
           font-size: 1.1em;
           text-align: center;
           width: 100%;
           margin-bottom: 15px !important;
         }
+
+        /* Search and export section */
         .card > div:first-child > div {
           width: 100% !important;
           max-width: 100% !important;
           justify-content: center !important;
         }
+
+        /* Action buttons in table */
         .btn-group {
           display: flex;
           flex-wrap: wrap;
@@ -408,6 +434,8 @@
           font-size: 12px;
         }
       }
+
+      /* Extra small devices */
       @media (max-width: 480px) {
         .dashboard-header {
           padding: 10px 10px 15px;
@@ -455,6 +483,8 @@
 
   <body>
     <div id="app"></div>
+
+    <!-- Edit Modal -->
     <div id="editModal" class="modal-overlay">
       <div class="modal-content-custom">
         <div
@@ -670,6 +700,8 @@
         </button>
       </div>
     </div>
+
+    <!-- Progress Modal -->
     <div id="progressModal" class="modal-overlay">
       <div class="modal-content-custom" style="max-width: 600px">
         <div
@@ -699,7 +731,9 @@
         <div
           id="courseListContainer"
           style="max-height: 400px; overflow-y: auto"
-        ></div>
+        >
+          <!-- Courses will be injected here -->
+        </div>
         <div style="text-align: right; margin-top: 25px">
           <button
             class="btn btn-default"
@@ -714,11 +748,16 @@
         </div>
       </div>
     </div>
+
     <script>
+      // ---------- Utilities ----------
       const qs = (s) => document.querySelector(s);
       const qsa = (s) => Array.from(document.querySelectorAll(s));
+
+      // Initialize Superadmin
       const initSuperAdmin = () => {
         const admin = JSON.parse(localStorage.getItem("super_admin") || "null");
+        // Force update to new password if it doesn't match or doesn't exist
         if (!admin || admin.password !== "admin@123") {
           localStorage.setItem(
             "super_admin",
@@ -877,6 +916,9 @@
           </div>
         `;
       }
+
+      // ---------- Logic ----------
+
       function render() {
         const route = currentRoute();
         const app = document.getElementById("app");
@@ -1208,6 +1250,7 @@
         qs("#" + id).classList.remove("active");
       }
 
+      // Progress Management
       function openProgressModal(id) {
         const users = loadUsers();
         const user = users.find((u) => u.id === id);
@@ -1224,6 +1267,7 @@
             '<p class="text-center text-muted" style="padding: 20px;">User has not enrolled in any courses yet.</p>';
         } else {
           courses.forEach((course, index) => {
+            // Handle both string and object formats
             const name = typeof course === "string" ? course : course.name;
             const progress =
               typeof course === "string" ? 0 : course.progress || 0;
@@ -1259,6 +1303,8 @@
 
         if (user) {
           const inputs = qsa(".course-progress-input");
+
+          // Convert old string courses to objects if needed
           let updatedCourses = [];
 
           inputs.forEach((input) => {
@@ -1270,9 +1316,11 @@
               name: name,
               progress: progress,
               status: progress >= 100 ? "Completed" : "In Progress",
-              enrolledDate: new Date().toISOString(),
+              enrolledDate: new Date().toISOString(), // Preserving original date would be better but this is a simple fix
             });
           });
+
+          // Only update if there were courses
           if (updatedCourses.length > 0) {
             user.enrolledCourses = updatedCourses;
             saveUsers(users);
